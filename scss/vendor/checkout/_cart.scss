@@ -1,0 +1,180 @@
+
+input.submit-button,
+input.submit-button:visited,
+a.submit-button,
+a.submit-button:visited,
+button.submit-button,
+button.submit-button:visited {
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	border: 1px solid transparent;
+	padding: 11px 21px;
+	color: #fff;
+	border-radius: 1px;
+	outline: none;
+	transition: border 0.4s ease-in-out, box-shadow 0.4s ease-in-out, background 0.4s ease-in-out;
+	box-shadow: none;
+	background: $brand;
+	&:hover {
+		border: 1px solid #bdc3c7;
+		box-shadow: 0 0 5px 0 #ccc;
+		background: #fafafa;
+		color: $brand;
+	}
+}
+
+h1.h2 {
+	font-size: 18px;
+	padding: 10px 10px 10px 20px;
+	margin: 0 0 40px 0;
+	background: lighten( $brand, 50% );
+	border-left: 5px solid $brand;
+}
+
+.cart {
+
+	padding: 40px 0;
+
+	.cart-boxes {
+		@include col(6/12);
+		padding: 20px;
+		border: 1px solid #e2e2e2;
+		margin-bottom: 20px;
+		&.last {
+			@include last;
+		}
+		h3 {
+			font-weight: bold;
+		}
+	}
+
+	input {
+		&[type="text"],
+		&[type="password"],
+		&[type="email"] {
+			border: 1px solid #eee;
+			padding:10px;
+			background: #f6f6f6;
+		}
+	}
+
+	table td {
+		input[type="text"] {
+			margin: 0;
+		}
+		dl {
+			@include col(6/12);
+			dt {
+				@include col(6/12);
+				font-weight: bold;
+			}
+			dl {
+				@include col(6/12);
+				@include last;
+			}
+		}
+	}
+
+	#summary {
+		dl {
+			overflow: hidden;
+			dt {
+				@include col(4/12);
+				margin-bottom: 5px;
+				font-weight: bold;
+			}
+			dd {
+				@include col(8/12);
+				@include last;
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+}
+
+
+body {
+	@media only screen and ( max-width : 580px ) {
+		.cart {
+			table, thead, tbody, tfoot, th, td, tr {
+				display: block;
+			}
+			thead tr {
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+			tr {
+				border: 1px solid #ccc;
+				margin: 0 0 5px 0;
+			}
+			td {
+				border: none;
+				border-bottom: 1px solid #eee;
+				position: relative;
+				padding-left: 50%;
+				&:last-child {
+					border: none;
+				}
+				input[type="text"], dl {
+					overflow: hidden;
+					margin: 0;
+					@include col(12/12);
+					@include last;
+					display: block;
+					float: none;
+					dt, dd {
+						@include col(6/12);
+					}
+					dd {
+						@include last;
+					}
+				}
+				input[type="text"] {
+					padding: 10px;
+				}
+			}
+			td:before {
+				/* Now like a table header */
+				position: absolute;
+				/* Top/left values mimic padding */
+				top: 10px;
+				left: 10px;
+				width: 45%;
+				padding-right: 10px;
+				white-space: nowrap;
+				content : attr(data-value);
+				font-weight: bold;
+			}
+
+			tfoot {
+				width: 100%;
+			}
+
+			.submit-button {
+				width: 100%;
+			}
+
+			#update_row {
+				width: 100%;
+				.submit-button,
+				.submit-button:visited {
+					display: block;
+					width: 100%;
+				}
+				input {
+					margin: 0 0 5px 0;
+				}
+			}
+
+			.cart-boxes {
+				@include col(12/12);
+				@include last;
+				padding: 20px;
+				height: auto !important;
+			}
+		}
+	}
+}

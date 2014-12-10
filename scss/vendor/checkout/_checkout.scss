@@ -1,0 +1,347 @@
+.checkout {
+
+	.border-box {
+		padding: 20px;
+		border: 1px solid #bdc3c7;
+		margin: 0 0 20px 0;
+	}
+
+	input {
+		&[type="text"],
+		&[type="password"],
+		&[type="email"] {
+			border: 1px solid #eee;
+			padding:10px;
+			background: #f6f6f6;
+		}
+	}
+
+	p.login-button {
+		display: inline;
+		float: left;
+	}
+
+	padding-top: 20px;
+
+	.selectricWrapper.delievery-address {
+		width: 100%;
+		.selectricItems li {
+			@include ellipsis;
+		}
+	}
+
+	.selectricWrapper {
+		margin:0 0 10px 0;
+	}
+
+	ul.order-details-list {
+		padding:0;
+		margin:0 0 20px 20px;
+		width:400px;
+		li {
+			list-style:none;
+			label {
+				display:inline;
+				float:left;
+				width:percentage( 1/3 );
+				font-weight: bold;
+			}
+			span {
+				display:inline;
+				float:left;
+				width:percentage( 1/3 );
+			}
+		}
+	}
+
+	.error {
+		margin-bottom:20px;
+	}
+
+	.step_title {
+		position:relative;
+		i {
+			margin:0 10px 0 0;
+			color: $brand;
+		}
+		padding:15px;
+		border:1px solid $grey;
+		border-bottom:none;
+		&.last {
+			border:1px solid $grey;
+			margin:0 0 40px 0;
+		}
+		&.active {
+			background: $emerald !important;
+			border:1px solid darken( $emerald, 10% );
+			color:#fff;
+			font-weight: bold;
+			a, a:visited
+			{
+				color:#fff;
+			}
+			i {
+				color: #fff;
+			}
+			.view {
+				display:none;
+			}
+		}
+		&.previous {
+			background: lighten( $emerald, 48% );
+			color: $brand;
+		}
+		.view {
+			position:absolute;
+			right:10px;
+		}
+	}
+
+	ul.contacts {
+		margin:0 0 20px 0;
+		padding:0;
+		li {
+			list-style:none;
+			background: $off-white;
+			padding: 12px 24px;
+			border-left: 3px solid $brand;
+			margin:0 0 2px 0;
+		}
+	}
+
+	#payment_list {
+		li {
+			list-style:none;
+			margin:0 0 20px 0;
+		}
+	}
+
+	.right-content {
+		.last {
+			margin:0 0 20px 0;
+		}
+	}
+
+	.left-content {
+		@include col( 8/12 );
+	}
+
+	.right-content {
+		@include col( 4/12 );
+		@include last;
+	}
+
+	&.step-1 {
+
+		.register-box {
+			@include col( 4/8 );
+		}
+
+		.login-box {
+			@include col( 4/8 );
+			@include last;
+			ul {
+				padding:0;
+				margin:0;
+				li {
+					list-style: none;
+				}
+			}
+			.forgotten {
+				@include col( 2/4 );
+				@include last;
+				padding:10px;
+			}
+		}
+
+	}
+
+	&.step-2 {
+
+		.form-wrapper {
+
+			margin:20px 0;
+			padding:0 0 15px 0;
+			border-bottom: 1px solid $grey;
+
+			> p {
+				margin:0 0 5px 0;
+				@include col( 2/4 );
+				&.last {
+					@include col( 2/4 );
+					@include last;
+				}
+				&.full{
+					@include col( 4/4 );
+					@include last;
+				}
+			}
+
+			&.last {
+				border-bottom:none;
+			}
+		}
+		#billing {
+			margin:0 20px 20px 20px;
+		}
+
+	}
+
+	&.step-3 {
+		#shipping {
+			margin:0 20px 20px 20px;
+		}
+	}
+
+	&.step-4 {
+		[name="special_instructions"]
+		{
+			height:150px;
+		}
+		#shipping_list {
+			li {
+				list-style: none;
+			}
+		}
+		#billing {
+			margin:0 20px 20px 20px;
+		}
+	}
+
+	&.step-5 {
+		#payment_list {
+			margin: 20px;
+		}
+	}
+
+	&.step-6 {
+		table {
+			width:100%;
+			th {
+				background: $grey;
+				color:#fff;
+			}
+			p {
+				margin:0;
+			}
+			tr.odd {
+				background: lighten( $grey, 22% );
+			}
+			td.align-right {
+				text-align:right;
+				font-weight:bold;
+			}
+			tfoot {
+				border-top: 3px solid $brand;
+				border-bottom: 3px solid $brand;
+			}
+			.reduced {
+				text-decoration: line-through;
+			}
+		}
+		.table-wrapper {
+			margin: 0 20px 20px 20px;
+		}
+	}
+
+	&.phone-order {
+		ul.billing,
+		ul.shipping {
+			margin:0 0 30px 0;
+			padding:0;
+			li {
+				list-style: none;
+				label {
+					display:inline;
+					float:left;
+					width:percentage(1/3);
+					font-weight: bold
+				}
+				span {
+					display:inline;
+					float:left;
+					width:percentage(2/3);
+				}
+			}
+		}
+	}
+
+}
+
+body {
+	@media only screen and ( max-width : 580px ) {
+		.checkout {
+			.left-content {
+				@include col(12/12);
+				@include last;
+			}
+			&.step-2 .form-wrapper > p,
+			&.step-2 .form-wrapper > p.last {
+				@include col(12/12);
+				@include last;
+			}
+			.right-content {
+				display: none;
+			}
+			table, thead, tbody, tfoot, th, td, tr {
+				display: block;
+			}
+			thead tr {
+				position: absolute;
+				top: -9999px;
+				left: -9999px;
+			}
+			tr {
+				border: 1px solid #ccc;
+				margin: 0 0 5px 0;
+			}
+			td {
+				border: none;
+				border-bottom: 1px solid #eee;
+				position: relative;
+				padding-left: 50%;
+				&:last-child {
+					border: none;
+				}
+				input[type="text"], dl {
+					overflow: hidden;
+					margin: 0;
+					@include col(12/12);
+					@include last;
+					display: block;
+					float: none;
+					dt, dd {
+						@include col(6/12);
+					}
+					dd {
+						@include last;
+					}
+				}
+				input[type="text"] {
+					padding: 10px;
+				}
+			}
+			td:before {
+				/* Now like a table header */
+				position: absolute;
+				/* Top/left values mimic padding */
+				top: 10px;
+				left: 10px;
+				width: 45%;
+				padding-right: 10px;
+				white-space: nowrap;
+				content : attr(data-value);
+				font-weight: bold;
+			}
+
+			tfoot {
+				width: 100%;
+				.align-right {
+					display: none;
+				}
+			}
+
+
+		}
+	}
+}

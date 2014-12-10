@@ -1,0 +1,27 @@
+//
+//	Overide any default variables here
+// ------------------------------------------------ \
+
+
+//	Edit Mode
+// 	Applies a semi-transparent grey background color
+// 	on all elements so you can see the structure.
+// 	Uncomment to use.
+// ------------------------------------------------ \
+
+//@include edit;
+
+
+//	Grid settings
+// ------------------------------------------------ \
+
+// gutter widths
+$untitled-gutter: 3;
+
+// container breakpoint behaviour
+.container {
+	@include container();
+	width: 1020px;
+	padding: 0 10px;
+}
+

@@ -1,0 +1,26 @@
+
+/**
+ * CONTAINER WIDTH - DONT ALTER
+ */
+
+.container {
+	position: relative;
+}
+body {
+	@media only screen and ( max-width : 480px ) {
+		.container { max-width: 320px; }
+		@import "max-480/shared";
+	}
+	@media only screen and ( min-width : 481px ) and ( max-width : 568px ) {
+		.container { max-width: 400px; }
+		@import "max-568/shared";
+	}
+	@media only screen and ( min-width : 569px ) and ( max-width : 768px ) {
+		.container { max-width: 560px; }
+		@import "max-768/shared";
+	}
+	@media only screen and ( min-width : 769px ) and ( max-width : 1040px ) {
+		.container { max-width: 770px; }
+		@import "max-1040/shared";
+	}
+}

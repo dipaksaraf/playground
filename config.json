@@ -1,0 +1,22 @@
+{
+	"domain" : "playground.app",
+	"paths" : {
+		"app" : {
+			"sass" : "scss/**/*.scss",
+			"js" : [
+				"javascripts/libs/selectivizr.js",
+				"javascripts/libs/modernizr.js",
+				"javascripts/app.js"
+			]
+		},
+		"plugins" : {
+			"css" : [
+
+			],
+			"js" : [
+				"plugins/jquery/jquery-1.11.0.min.js",
+				"plugins/jquery/jquery-migrate-1.2.1.min.js"
+			]
+		}
+	}
+}

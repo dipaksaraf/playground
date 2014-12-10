@@ -1,0 +1,173 @@
+/* ------------------------------ */
+/* WordPress Generated Classes
+/* ------------------------------ */
+
+.wordpress-wrapper {
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: $brand;
+    }
+
+    .alignnone {
+        margin: 6px 24px 24px 0;
+    }
+
+    .aligncenter,
+    div.aligncenter {
+        display: block;
+        margin: 6px auto 6px auto;
+    }
+
+    .alignright {
+        float:right;
+        margin: 6px 0 24px 24px;
+    }
+
+    .alignleft {
+        float: left;
+        margin: 6px 24px 24px 0;
+    }
+
+    .aligncenter {
+        display: block;
+        margin: 6px auto 6px auto;
+    }
+
+    a img.alignright {
+        float: right;
+        margin: 6px 0 24px 24px;
+    }
+
+    a img.alignnone {
+        margin: 6px 24px 24px 0;
+    }
+
+    a img.alignleft {
+        float: left;
+        margin: 6px 24px 24px 0;
+    }
+
+    a img.aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .wp-caption {
+        background: #fff;
+        border: 1px solid #f0f0f0;
+        max-width: 96%; /* Image does not overflow the content area */
+        padding: 6px 3px 10px;
+        text-align: center;
+    }
+
+    .wp-caption.alignnone {
+        margin: 6px 24px 24px 0;
+    }
+
+    .wp-caption.alignleft {
+        margin: 6px 24px 24px 0;
+    }
+
+    .wp-caption.alignright {
+        margin: 6px 0 24px 24px;
+    }
+
+    .wp-caption img {
+        border: 0 none;
+        height: auto;
+        margin: 0;
+        max-width: 98.6%;
+        padding: 0;
+        width: auto;
+    }
+
+    .wp-caption p.wp-caption-text {
+        @include font-size(11px);
+        margin: 0;
+        padding: 0 4px 6px;
+    }
+
+}
+
+.wordpress {
+    #content-wrapper {
+        padding: 20px 0;
+        border-bottom: 1px solid $grey;
+        margin-bottom: 20px;
+        > div {
+            .eightCol {
+                @include col(9/12);
+                ol {
+                    margin: 0;
+                    li {
+                        list-style: none;
+                        border-bottom: 1px solid $grey;
+                        margin: 0 0 20px 0;
+                        h2 {
+                            font-size: 16px;
+                            a, a:visited {
+                                font-weight: bold;
+                                text-decoration: none;
+                            }
+                        }
+                        &:last-child {
+                            border:none;
+                        }
+                    }
+                }
+                article {
+                    p {
+                        line-height: 18px;
+                    }
+                    br {
+                        display: block;
+                        margin: 0 0 5px;
+                    }
+                    time {
+                        display: inline-block;
+                        padding: 5px 10px;
+                        background: $accent;
+                        color: white;
+                        border-radius: 3px;
+                    }
+                }
+            }
+            .fourCol {
+                @include col(3/12);
+                @include last;
+                ul {
+                    margin: 0 0 10px 0;
+                    li {
+                        margin: 0 0 5px 0;
+                    }
+                }
+                h2 {
+                    font-size: 16px;
+                    font-weight: bold;
+                    margin: 0 0 5px 0;
+                    color: $accent;
+                }
+                #s {
+                    @include span(8/12);
+                    margin: 0;
+                    padding: 10px;
+                    height: 38px;
+                }
+                #searchsubmit {
+                    @include span(4/12);
+                    @include last;
+                    text-align: center;
+                    height: 38px;
+                    background: $brand;
+                    color: white;
+                }
+                #searchform {
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+    }
+}
